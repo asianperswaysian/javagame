@@ -3,10 +3,22 @@
   <head>
     <meta charset="utf-8">
   </head>
+<link rel="stylesheet" type="text/css" href="javagame.css">
   <body>
     <!-- page content -->
-    <svg width="100%" viewBox="0 0 800 400">
-      
+    <svg id="kkcool" width="90%" viewBox="0 0 800 400" fill="#c5d2e8">
+    <image id="santa" x="86" y="17" width="40" height="40" xlink:href="http://rs415.pbsrc.com/albums/pp236/Keefers_/Keefers%20Graphics/lioncubpride.gif~c200"/>
+      <image id="bambi" x="200" y="0" width="35" height="35" xlink:href="http://rs795.pbsrc.com/albums/yy232/PixKaruumi/Pixels/Pixels%2076/070.gif~c200">
+        <animate id="sup" attributeName="y" from="0" to="400" dur="5s" begin="0s; wassuh.end"/>
+        <animate id="wassuh" attributeName="y" from="400" to="0" dur="5s" begin="sup.end"/>
+      </image>
+        <image id="bambi" x="360" y="0" width="35" height="35" xlink:href="http://rs795.pbsrc.com/albums/yy232/PixKaruumi/Pixels/Pixels%2076/070.gif~c200">
+          <animate id="kk" attributeName="y" from="0" to="400" dur="5s" begin="0s; ok.end"/>
+          <animate id="ok" attributeName="y" from="400" to="0" dur="5s" begin="kk.end"/>
+
+      </image>
     </svg>
+    <script src="javagame.js"></script>
+
   </body>
 </html>
