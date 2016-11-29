@@ -5,12 +5,13 @@ var xCor = Number(Santa.getAttribute("x"));
 var yCor = Number(Santa.getAttribute("y"));
 
 var cancan = document.getElementById("kkcool")
-var width = 80
-var height = 80
-var playerX
-var playerY
-var foodX
-var foodY
+var width = 35
+var height = 35
+// randomNumber returns a random number between min and max
+function randomNumber(min,max)
+{
+ return Math.floor(Math.random()*(max-min+1)+min);
+}
 
 document.addEventListener("keydown", function(e) {
   if (e.keyCode == 37) {
@@ -34,24 +35,25 @@ document.addEventListener("keydown", function(e) {
      Santa.setAttribute("y", yCor + 15);
     yCor = yCor + 15;
   }
-})
 
-cancan.addEventListener("click", function (e) {
-  var player1 = document.getElementById("santa")
-  var food1 = document.getElementById("bambi")
+  // get the position of your food piece
+  var bambiX = Number(document.getElementById("bambi").getAttribute("x"))
+  var bambiY = Number(document.getElementById("bambi").getAttribute("y"))
 
-  playerX = Number(player1.getAttribute("x"))
-  playerY = Number(player1.getAttribute("y"))
+  if (xCor > bambiX && xCor < bambiX + width && yCor > bambiY && yCor < bambiY + height) {
+    // eat food piece
+    console.log("EATEN")
 
-  foodX = Number(food1.getAttribute("x"))
-  foodY = Number(food1.getAttribute("y"))
-
-  if (playerX > foodX) {
-    player1.setAttribute("fill", "red")
-    food1.setAttribute("fill", "red")
   }
-  else {
-    player1.setAttribute("fill", "green")
-    food1.setAttribute("fill", "green")
-  }
+bambiX = Number(document.getElementById("bambi2").getAttribute("x"))
+bambiY = Number(document.getElementById("bambi2").getAttribute("y"))
+
+if (xCor > bambiX && xCor < bambiX + width && yCor > bambiY && yCor < bambiY + height) {
+  // eat food piece
+  bambiX = randomNumber;
+  bambiY = randomNumber;
+  console.log("EATEN")
+}
+
+
 })
