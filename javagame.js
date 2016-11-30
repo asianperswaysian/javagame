@@ -8,10 +8,6 @@ var cancan = document.getElementById("kkcool")
 var width = 35
 var height = 35
 // randomNumber returns a random number between min and max
-function randomNumber(min,max)
-{
- return Math.floor(Math.random()*(max-min+1)+min);
-}
 
 document.addEventListener("keydown", function(e) {
   if (e.keyCode == 37) {
@@ -37,11 +33,19 @@ document.addEventListener("keydown", function(e) {
   }
 
   // get the position of your food piece
+  function randomNumber(min,max)
+  {
+   return Math.floor(Math.random(0, 800)*(max-min+1)+min);
+  }
+
   var bambiX = Number(document.getElementById("bambi").getAttribute("x"))
   var bambiY = Number(document.getElementById("bambi").getAttribute("y"))
 
   if (xCor > bambiX && xCor < bambiX + width && yCor > bambiY && yCor < bambiY + height) {
     // eat food piece
+    var xuppers = randomNumber(100, 600)
+    bambi.setAttribute("x", xuppers);
+
     console.log("EATEN")
 
   }
@@ -50,8 +54,9 @@ bambiY = Number(document.getElementById("bambi2").getAttribute("y"))
 
 if (xCor > bambiX && xCor < bambiX + width && yCor > bambiY && yCor < bambiY + height) {
   // eat food piece
-  bambiX = randomNumber;
-  bambiY = randomNumber;
+  var xuppers = randomNumber(100, 600)
+  bambi2.setAttribute("x", xuppers);
+  
   console.log("EATEN")
 }
 
