@@ -7,6 +7,7 @@ var yCor = Number(Santa.getAttribute("y"));
 var cancan = document.getElementById("kkcool")
 var width = 35
 var height = 35
+var foodEaten = 0
 // randomNumber returns a random number between min and max
 
 document.addEventListener("keydown", function(e) {
@@ -45,6 +46,9 @@ document.addEventListener("keydown", function(e) {
     // eat food piece
     var xuppers = randomNumber(100, 600)
     bambi.setAttribute("x", xuppers);
+    //scoresheet
+   foodEaten = foodEaten + 1;
+   document.getElementById("score").textContent = foodEaten
 
     console.log("EATEN")
 
@@ -56,9 +60,13 @@ if (xCor > bambiX && xCor < bambiX + width && yCor > bambiY && yCor < bambiY + h
   // eat food piece
   var xuppers = randomNumber(100, 600)
   bambi2.setAttribute("x", xuppers);
-  
+  //scoresheet
+ foodEaten = foodEaten + 1;
+ document.getElementById("score").textContent = foodEaten
+ 
   console.log("EATEN")
 }
+
 
 
 })
