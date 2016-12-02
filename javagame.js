@@ -8,6 +8,7 @@ var cancan = document.getElementById("kkcool")
 var width = 35
 var height = 35
 var foodEaten = 0
+var timeStart = Date.now()
 // randomNumber returns a random number between min and max
 
 document.addEventListener("keydown", function(e) {
@@ -63,8 +64,15 @@ if (xCor > bambiX && xCor < bambiX + width && yCor > bambiY && yCor < bambiY + h
   //scoresheet
  foodEaten = foodEaten + 1;
  document.getElementById("score").textContent = foodEaten
- 
+
   console.log("EATEN")
+}
+if(foodEaten == 1) {
+  document.getElementById("kkcool").pauseAnimations()
+  var timeStop = Date.now()
+  var timeDuration = timeStop-timeStart
+  timeDuration = timeDuration/1000
+  document.getElementById("totaltime").textContent = timeDuration
 }
 
 

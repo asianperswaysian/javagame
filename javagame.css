@@ -1,3 +1,8 @@
 body {
   background: url("http://www.pixelstalk.net/wp-content/uploads/2016/08/Flower-Pictures-Tumblr.jpg");
 }
+text {
+  font-family: 'Mr Dafoe', cursive;
+  font-size: 30px;
+  font-style: black;
+}
